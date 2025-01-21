@@ -1,4 +1,4 @@
-#include <hip/hip_runtime.h>
+#include "gemm.hpp"
 
 __global__ void matmulKernel(const float* A, const float* B, float* C, int M, int N, int K) {
   int row = hipBlockIdx_y * hipBlockDim_y + hipThreadIdx_y;

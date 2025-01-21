@@ -35,7 +35,7 @@ set_source_files_properties(
     PROPERTIES LANGUAGE HIP
 )
 
-target_link_libraries(hl PRIVATE hip::host hip::device)
+target_link_libraries(hl PUBLIC hip::host hip::device)
 
 add_subdirectory(pipelines)
 
