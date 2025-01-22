@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.18 FATAL_ERROR)
-
 project(hl LANGUAGES CXX HIP)
 
 set(CMAKE_HIP_ARCHITECTURES "gfx1100")
@@ -21,17 +20,15 @@ option(BUILD_TESTS "Build tests" OFF)
 
 set(SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/hl")
 
-add_library(hl STATIC
-  "${SOURCE_DIR}/gemm.hip"
-)
+add_library(hl)
 
-target_sources(hl PRIVATE
-  "${SOURCE_DIR}/gemm.hpp"
+target_sources(hl
+  PRIVATE
+    "${SOURCE_DIR}/gemm.cpp"
 )
 
 set_source_files_properties(
-    gemm.hip
-    gemm.hpp
+    "${SOURCE_DIR}/gemm.cpp"
     PROPERTIES LANGUAGE HIP
 )
 

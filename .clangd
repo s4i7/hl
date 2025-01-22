@@ -1,0 +1,2 @@
+CompileFlags:
+  Add: ["-xhip", "-I/opt/rocm/include"]

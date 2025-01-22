@@ -5,3 +5,4 @@ wip
 ```
 sudo sysctl -w vm.max_map_count=262144
 ```
+2) `pci=assign-busses` kernel parameter breaks amdgpu driver on some motherboards
