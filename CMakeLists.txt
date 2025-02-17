@@ -24,15 +24,18 @@ add_library(hl)
 
 target_sources(hl
   PRIVATE
+    "${SOURCE_DIR}/device.cpp"
     "${SOURCE_DIR}/gemm.cpp"
 )
 
 set_source_files_properties(
+    "${SOURCE_DIR}/device.cpp"
     "${SOURCE_DIR}/gemm.cpp"
     PROPERTIES LANGUAGE HIP
 )
 
 target_link_libraries(hl PUBLIC hip::host hip::device)
+target_include_directories(hl PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${SOURCE_DIR})
 
 add_subdirectory(pipelines)
 
